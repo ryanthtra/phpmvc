@@ -2,7 +2,7 @@
 
 class Posts extends Controller {
   public function __construct() {
-    echo 'Posts loaded!';
+    // echo 'Posts loaded!';
   }
 
   public function index() {

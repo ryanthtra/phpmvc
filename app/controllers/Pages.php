@@ -1,19 +1,28 @@
 <?php
 
 class Pages extends Controller {
+  private $postModel;
+
   public function __construct() {
-    echo 'Pages loaded!';
+    $this->postModel = $this->model('Post');
   }
 
   public function index() {
+    $posts = $this->postModel->getPosts();
     $data = [
-      'title' => 'Welcome'
+      'title' => 'Welcome',
+      'posts' => $posts
     ];
+  
     $this->view('pages/index', $data);
   }
 
   public function about() {
-    $this->view('pages/about');
+    $data = [
+      'title' => 'Pages: About Us'
+    ];
+
+    $this->view('pages/about', $data);
   }
 }
 

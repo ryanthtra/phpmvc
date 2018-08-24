@@ -27,6 +27,13 @@ class Controller {
       die('View does NOT exist!');
     }
   }
+
+  public function index() {
+    $data = [
+      'title' => 'Default Index Page'
+    ];
+    $this->view('default/index', $data);
+  }
 }
 
 ?>
